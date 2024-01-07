@@ -1,0 +1,60 @@
+/* Add this to your styles.css or styles.scss */
+
+.popup-container {
+    background-color: #ffffff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .popup-header label {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .popup-input input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .popup-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .popup-buttons button {
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 4px;
+  }
+  
+  .popup-buttons button[mat-raised-button] {
+    background-color: #007bff;
+    margin-top: 15px;
+    margin-right: 90px;
+    color: #ffffff;
+  }
+  
+  .popup-buttons button[mat-button] {
+    background-color: transparent;
+    margin-top: 15px;
+    color: #007bff;
+    border: 1px solid #007bff;
+  }
+  

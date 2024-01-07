@@ -1,0 +1,14 @@
+<app-add-task></app-add-task>
+<div class="center-container">
+  <div *ngFor="let task of taskService.getTask()" class="task-item">
+    <div class="task-content">
+      <input type="checkbox" [(ngModel)]="task.completed" (change)="updateTaskStatus(task.id)">
+      <span [class.completed]="task.completed">{{ task.description }}</span>
+    </div>
+    <div class="button-container">
+      <button mat-raised-button color="primary" (click)="openPopup(task.id)">Edit</button>
+      <button class="delete-button" (click)="deleteTask(task.id)">Delete</button>
+    </div>
+  </div>
+</div>
+

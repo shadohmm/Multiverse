@@ -1,0 +1,57 @@
+<div class="container">
+    <p>Popup updatworkssssss!</p>
+    <div class="form">
+        <!-- employee-form.component.html -->
+
+<form>
+    <table>
+       
+      <tr>
+        <td>ID:</td>
+        <td><input type="number" [(ngModel)]="employee.id" name="id"></td>
+      </tr>
+      <tr>
+        <td>Skill Count</td>
+        <td><input type="text" [(ngModel)]="employee.skils" name="Skill"></td>
+      </tr>
+      <tr>
+        <td>First Name:</td>
+        <td><input type="text" [(ngModel)]="employee.firstName" name="firstName"></td>
+      </tr>
+      <tr>
+        <td>Last Name:</td>
+        <td><input type="text" [(ngModel)]="employee.lastName" name="lastName"></td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td><input type="text" [(ngModel)]="employee.email" name="email"></td>
+      </tr>
+      <tr>
+        <td>Date of Birth:</td>
+        <td><input type="date" [(ngModel)]="employee.dob" name="dob"></td>
+      </tr>
+      <tr>
+        <td>Education:</td>
+        <td><input type="text" [(ngModel)]="employee.education" name="education"></td>
+      </tr>
+      <tr>
+        <td>Experience:</td>
+        <td><input type="number" [(ngModel)]="employee.experience" name="experience"></td>
+      </tr>
+      <tr>
+        <td>Salary:</td>
+        <td><input type="number" [(ngModel)]="employee.salary" name="salary"></td>
+      </tr>
+      
+    </table>
+  
+    
+  </form>
+  
+    </div>
+    <div>
+        <div class="d-grid gap-2 d-md-block">
+            <button class="btn btn-primary" type="button" (click)="onSave()">Save</button>
+            <button class="btn btn-primary" type="button" (click)="onCancel()">Cancle</button>
+          </div>
+    </div>

@@ -1,0 +1,22 @@
+/* src/app/add-task/add-task.component.css */
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px; /* Adjust the margin based on your preference */
+  }
+  
+  input {
+    padding: 8px;
+    margin-right: 8px;
+  }
+  
+  button {
+    padding: 8px 16px;
+    cursor: pointer;
+    background-color: #007bff; /* Bootstrap's primary color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+  }
+  

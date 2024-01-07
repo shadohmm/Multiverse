@@ -1,0 +1,78 @@
+/* Centering container */
+.center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Styling for each task item */
+  .task-item {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Completed task style */
+  .completed {
+    text-decoration: line-through;
+    color: #888; /* or any color you prefer */
+  }
+  
+  /* Optional: Add some spacing around the checkbox and button */
+  .task-item input,
+  .task-item button {
+    margin-right: 5px;
+  }
+  /* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
+
+  .center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 300px;
+  }
+  
+  .task-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .completed {
+    text-decoration: line-through;
+    color: #888;
+  }
+  
+  .button-container {
+    display: flex;
+  }
+  
+  .delete-button {
+    margin-left: 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 8px;
+    cursor: pointer;
+  }
+  .app-add-task {
+    margin-bottom: 10px; /* Adjust the margin as needed */
+  }
+  
+  @media (max-width: 768px) {
+    .task-item {
+      width: 100%;
+    }
+  }
+  
+  

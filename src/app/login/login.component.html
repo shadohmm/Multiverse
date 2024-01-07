@@ -1,0 +1,76 @@
+
+<!-- <div class="login-container">
+    <h2>Login</h2>
+    <form (ngSubmit)="login() ; sendLoginStatus()" #loginForm="ngForm">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" [(ngModel)]="username" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" required>
+      </div>
+  
+      <button type="submit">Login</button>
+    </form>
+  
+    <div *ngIf="loginStatus; then success else failure"></div>
+    <ng-template #success>
+      <h3 style="color: green;">Login successful</h3>
+    </ng-template>
+    <ng-template #failure>
+      <h3 style="color: red;">Login failed</h3>
+    </ng-template>
+  </div>
+
+  <h3>:ogin Status is : {{loginStatus}}</h3>
+    -->
+<!-- 
+  the below one is glassmorphisam one -->
+<!-- <div class="body">
+       <div class="background" >
+           <div class="shape"></div>
+           <div class="shape"></div>
+       </div>
+       <form >
+           <h3>Login Here</h3>
+   
+           <label for="username">Username</label>
+           <input type="text" placeholder="Email or Phone" id="username">
+   
+           <label for="password">Password</label>
+           <input type="password" placeholder="Password" id="password">
+   
+           <button class="btn">Log In</button>
+           <div class="social">
+             <div class="go"><i class="fab fa-google"></i>  Google</div>
+             <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+           </div>
+       </form>
+      </div> -->
+     
+      <body>
+        <div class="main">  	
+          <input type="checkbox" id="chk" aria-hidden="true">
+      
+            <div class="signup">
+              <form>
+                <label for="chk" aria-hidden="true">Sign up</label>
+                <input type="text" name="txt" placeholder="User name" required=""  [(ngModel)]="signUpObj.useName">
+                <input type="email" name="email" placeholder="Email" required=""[(ngModel)]="signUpObj.email">
+                <input type="password" name="pswd" placeholder="Password" required="" [(ngModel)]="signUpObj.password">
+                <button (click)="sendLoginStatus();onSignUp()">Sign up</button>
+              </form>
+            </div>
+      
+            <div class="login">
+              <form>
+                <label for="chk" aria-hidden="true">Login</label>
+                <input type="email" name="useName" placeholder="User name" required="" [(ngModel)]="signObj.useName">
+                <input type="password" name="password" placeholder="Password" required="" [(ngModel)]="signObj.password">
+                <button (click)="sendLoginStatus();onLogin()">Login</button>
+              </form>
+            </div>
+        </div>
+      </body> 

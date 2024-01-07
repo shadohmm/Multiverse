@@ -1,0 +1,13 @@
+<!-- src/app/popup/popup.component.html -->
+<div class="popup-container">
+  <div class="popup-input">
+    <label for="popup-input">Enter Text:</label>
+    <input type="text" id="popup-input" [(ngModel)]="inputText">
+  </div>
+  <div class="popup-buttons">
+    <button mat-raised-button color="primary" (click)="onSave()">Save</button>
+    <button mat-button (click)="onCancel()">Cancel</button>
+  </div>
+</div>
+
+  
