@@ -6,15 +6,19 @@ import { EmployeeComponent } from './Modules/employee/employee/employee.componen
 import { TodoComponent } from './Modules/todo-list/todo/todo.component';
 import { AppComponent } from './app.component';
 import { CardsComponent } from './cards/cards.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   //here we write the rout configuration 
   {path:'login',component:LoginComponent},
-  {path:'home',component:CardsComponent},
-  {path:'employees',component:EmployeeComponent},
-  {path:'calculator',component:CalculatorComponent},
-  {path:'todolit',component:TodoComponent},
-  {path: '', redirectTo:'app',pathMatch:'full'}
+  {path:'home',component:CardsComponent, canActivate: [AuthGuard]},
+  {path:'employees',component:EmployeeComponent, canActivate: [AuthGuard]},
+  {path:'calculator',component:CalculatorComponent, canActivate: [AuthGuard]},
+  {path:'todolit',component:TodoComponent, canActivate: [AuthGuard]},
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '**', redirectTo: 'login' }
+  // { path: '', component: LoginComponent }
+  //{path: '', redirectTo:'app',pathMatch:'full'}
 ];
 
 @NgModule({

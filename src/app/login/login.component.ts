@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +12,8 @@ export class LoginComponent {
   // username: string = '';
   // password: string = '';
   loginStatus: boolean =false;
+  signInStatu : string = "Please Enter the Details";
+  signUpStatus :string = 'Please SignUp';
   signedUpUsers: any[] = [];
   signUpObj:any = {
     useName:'',
@@ -28,23 +31,34 @@ export class LoginComponent {
   //     this.signedUpUsers = JSON.parse(localData);
   //   }
   // }
-  constructor(private router: Router) { }
+  constructor(private router: Router, private auth:AuthService) { }
   onSignUp(){
+    let userName = this.signUpObj.email
+    let password = this.signUpObj.password
+    let singUpStatus = this.auth.signUp(userName, password)
+    this.signUpStatus = singUpStatus;
    // this.loginStatus = this.signUpObj.userName.trim() !== '' && this.signUpObj.password.trim() !== '' && this.signUpObj.email.trim() !== ''
-   this.loginStatus = true;
-   this.router.navigate(['/app']);
-    // this.signedUpUsers.push(this.signUpObj)
-    // localStorage.setItem('signedUpUsers', JSON.stringify(this.signedUpUsers));
-    // this.signUpObj = {
-    //   useName:'',
-    //   email:'',
-    //   password: ''
-    // }
+  //  this.loginStatus = true;
+  //  this.router.navigate(['/app']);
+ 
   }
   onLogin(){
+    let userName = this.signObj.useName;
+    let password = this.signObj.password;
+    let signInSt = this.auth.signIn(userName,password);
+    
+    if(signInSt === true){
+      console.log("loggend in navigatinf to app");
+      this.signInStatu = "Login Success";
+    this.router.navigate(['/home']);
+    }else{
+      console.log("login failes");
+      
+      this.signInStatu = signInSt;
+    }
+
     // this.loginStatus = this.signObj.userName.trim() !== '' && this.signObj.password.trim() !== ''
-    this.loginStatus = true;
-    this.router.navigate(['/app']);
+    // this.loginStatus = true;
     // const isUserExist = this.signedUpUsers.find(m => m.username == this.signObj.useName  && m.password == this.signObj.password);
     //  if(isUserExist != undefined){
     //   alert("user loged in");
