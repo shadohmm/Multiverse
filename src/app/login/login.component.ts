@@ -9,8 +9,8 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent {
   
-  // username: string = '';
-  // password: string = '';
+  isCondition1Met:boolean =false;
+  isCondition2Met:boolean = false;
   loginStatus: boolean =false;
   signInStatu : string = "Please Enter the Details";
   signUpStatus :string = 'Please SignUp';
@@ -37,6 +37,9 @@ export class LoginComponent {
     let password = this.signUpObj.password
     let singUpStatus = this.auth.signUp(userName, password)
     this.signUpStatus = singUpStatus;
+    if(this.signInStatu === "User Already exist"){
+      this.isCondition1Met = true;
+    }
    // this.loginStatus = this.signUpObj.userName.trim() !== '' && this.signUpObj.password.trim() !== '' && this.signUpObj.email.trim() !== ''
   //  this.loginStatus = true;
   //  this.router.navigate(['/app']);
@@ -53,7 +56,7 @@ export class LoginComponent {
     this.router.navigate(['/home']);
     }else{
       console.log("login failes");
-      
+      this.isCondition2Met = true
       this.signInStatu = signInSt;
     }
 
